@@ -1,0 +1,42 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie h1 {
+  margin: 40px 0 50px;
+  color: #3f76ca;
+}
+
+.movie_info {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.movie_info p {
+  align-self: center;
+  width: 40%;
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 500;
+  word-spacing: 10px;
+  margin-right: 20px;
+}
+
+.movie_image {
+  width: 500px;
+  height: 500px;
+}
+
+.movie_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

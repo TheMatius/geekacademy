@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/authentication.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="../index.html"><img src="../images/logo.png" alt="logo" /></a>
+      <div class="navbar_menu">
+        <a href="../index.html">Inicio</a>
+        <a href="#">Registro</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="form_container">
+        <h1>Formulario de registro</h1>
+        <form class="form_register" >
+          <div class="form_group">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" required>
+          </div>
+          <div class="form_group">
+            <label for="lastname">Apellido:</label>
+            <input type="text" name="lastname" id="lastname" required>
+          </div>
+          <div class="form_group">
+            <label for="phone">Teléfono:</label>
+            <input type="text" name="phone" id="phone" required>
+          </div>
+          <div class="form_group">
+            <label for="address">Dirección:</label>
+            <input type="text" name="address" id="address" required>
+          </div>
+          <div class="form_group">
+            <label for="description">Observaciones:</label>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+          </div>
+          <div class="form_group button_group">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="../scripts/authentication.js"></script>
+</body>
+</html>
