@@ -32,30 +32,6 @@ const strMessage = document.getElementById('response_message');
 createOptions(fromSelect);
 createOptions(toSelect);
 
-btnConvert.addEventListener('click', () => {
-  const fromCurrency = fromSelect.value;
-  const toCurrency = toSelect.value;
-  const amount = parseFloat(document.getElementById('amount').value);
-
-  if (validateAmount(amount) && validateOption(fromCurrency) && validateOption(toCurrency)) {
-    const total = convertCurrency(fromCurrency, toCurrency, amount);
-    setMessage(`${amount} ${fromCurrency} = ${total.toFixed(2)} ${toCurrency}`);
-  }
-});
-
-function convertCurrency(from, to, amount) {
-  if (from === 'USD') {
-    return amount * dollar[to];
-  } if (to === 'USD') {
-    return amount / dollar[from];
-  } if (from === to) {
-    return amount;
-  }
-  else {
-    return amount / dollar[from] * dollar[to];
-  }
-}
-
 function createOptions(select) {
   const fragment = document.createDocumentFragment();
   currencyOption.forEach((currency, idx) => {
@@ -65,7 +41,7 @@ function createOptions(select) {
     fragment.appendChild(option);
   });
   select.appendChild(fragment);
-};
+}
 
 function setError(message) {
   strError.innerText = message;
@@ -84,6 +60,17 @@ function setMessage(message) {
   strMessage.parentElement.classList.remove('hidden');
 }
 
+btnConvert.addEventListener('click', () => {
+  const fromCurrency = fromSelect.value;
+  const toCurrency = toSelect.value;
+  const amount = parseFloat(document.getElementById('amount').value);
+
+  if (validateAmount(amount) && validateOption(fromCurrency) && validateOption(toCurrency)) {
+    const total = convertCurrency(fromCurrency, toCurrency, amount);
+    setMessage(`${amount} ${fromCurrency} = ${total.toFixed(2)} ${toCurrency}`);
+  }
+});
+
 function validateAmount(amount) {
   if (isNaN(amount) || amount === 0) {
     setError('Debes ingresar una cantidad');
@@ -98,4 +85,17 @@ function validateOption(option) {
     return false;
   }
   return true;
+}
+
+function convertCurrency(from, to, amount) {
+  if (from === 'USD') {
+    return amount * dollar[to];
+  } if (to === 'USD') {
+    return amount / dollar[from];
+  } if (from === to) {
+    return amount;
+  }
+  else {
+    return amount / dollar[from] * dollar[to];
+  }
 }
